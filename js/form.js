@@ -54,6 +54,8 @@ function montaTd(dado, classe){
     return td;
 }
 
+
+
 function validaPaciente(paciente){
     if(validaPeso(paciente.peso)){
         return true

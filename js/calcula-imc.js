@@ -58,7 +58,6 @@ function validaAltura(altura){
     }
 }
 
-
 function calculaImc(peso, altura) {
     var imc = 0;
     imc = peso / (altura * altura);
