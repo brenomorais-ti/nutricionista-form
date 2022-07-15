@@ -9,8 +9,13 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     var pacienteTr = montaTr(paciente);
 
-    if(!validaPaciente(paciente)){
+    if(!validaPeso(paciente.peso)){
         alert("Peso invalido!")
+        return;
+    }
+
+    if(!validaAltura(paciente.altura)){
+        alert("Altura invalida!")
         return;
     }
 
@@ -52,14 +57,4 @@ function montaTd(dado, classe){
     td.classList.add(classe);
 
     return td;
-}
-
-
-
-function validaPaciente(paciente){
-    if(validaPeso(paciente.peso)){
-        return true
-    } else{
-        return false;
-    }
 }
