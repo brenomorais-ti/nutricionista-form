@@ -1,5 +1,17 @@
-var compoFiltro = document.querySelector("#filtrar-tabela")
+var campoFiltro = document.querySelector("#filtrar-tabela");
 
-compoFiltro.addEventListener("input", function(){
-    console.log(this.value);
+campoFiltro.addEventListener("input", function() {
+    var pacientes = document.querySelectorAll(".paciente");
+
+    if (this.value.length > 0) {
+        for (var i = 0; i < pacientes.length; i++) {
+            var paciente = pacientes[i];            
+            paciente.classList.add("invisivel");    
+        }
+    } else {
+        for (var i = 0; i < pacientes.length; i++) {
+            var paciente = pacientes[i];
+            paciente.classList.remove("invisivel");
+        }
+    }
 });
