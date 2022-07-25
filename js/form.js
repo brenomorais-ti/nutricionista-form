@@ -7,7 +7,6 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     var paciente = obtemDadosDoForm(form);
 
-    var pacienteTr = montaTr(paciente);
 
     if(!validaPeso(paciente.peso)){
         alert("Peso invalido!")
@@ -19,12 +18,16 @@ botaoAdicionar.addEventListener("click", function(event) {
         return;
     }
 
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
+    adicionaPaciente(paciente);
 
     form.reset();
 });
+
+function adicionaPaciente(paciente) {
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
 
 function obtemDadosDoForm(form){
     var paciente = {
